@@ -1,9 +1,41 @@
 package WeightedGraph;
 
 public class WeightedGraph {
+	
+	private int[][] adjacencyMatrix;
+	private String nodeName;
+	private int size;
+	private int distance;
+	
+	public WeightedGraph(String fileName) throws FileNotFoundException {
+		Scanner scanner = new Scanner(new File(fileName));
+		String nodeName = scanner.nextLine().split(",");
+		
+		size = nodeName.length;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// initialize matrix
+		adjacencyMatrix = new int[size][size];
+		for(int i = 0; i < size; i ++) {
+			for (int j = 0; j< size; j++){
+				adjacencyMatrix[i][j] = -1;
+				if (i == j) {
+					adjacencyMatrix[i][j] = 0;
+					
+				}
+		}
+		}
+		while(scanner.hasNextLine()) {
+			String[] edges = scanner.nextLine().split(",");
+			int index0 = Integer.parseInt(edges[0]);
+			int index1 = Integer.parseInt(edges[1]);
+			int distance = Integer.parseInt(edges[2]);
+			
+			adjacencyMatrix[index0][index1] = distance;
+					
+			
+		}
+		scanner.close();
+	}
 
 	}
 	
