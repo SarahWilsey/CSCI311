@@ -1,0 +1,39 @@
+package WeightedGraph;
+
+public class WeightedGraph {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	/**
+	 * Gets the distance between i and k
+	 * @return, returns the height
+	 */
+	public int getDistance(int i, int k){
+		return this.distance;
+	}
+	/**
+	 * Gets the name of the index
+	 * @return, returns the node name
+	 */
+	public String getNodeName(int i) {
+		return this.nodeName;
+	}
+	/**
+	 * Gets the number of nodes
+	 * @return, returns the number of nodes
+	 */
+	public int getSize() {
+		return this.size;
+	}
+	public boolean directLink(int i, int k) {
+		if(this.distance == -1) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+}
