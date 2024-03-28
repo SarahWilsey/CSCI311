@@ -1,0 +1,33 @@
+from WeightedGraph import WeightedGraph
+
+def test_weighted_graph(filename):
+   
+    print("***** Testing WeightedGraph with file:", filename, "*****")
+   
+    # Create WeightedGraph instance
+    graph = WeightedGraph(filename)
+   
+    graph.printMatrix()
+    # Test getDistance
+    print("***** Testing getDistance *****")
+    print("getDistance(0, 1) returns:", graph.getDistance(0, 1), "expected: 4")
+    print("getDistance(1, 4) returns:", graph.getDistance(1, 4), "expected: 1")
+    print("getDistance(2, 5) returns:", graph.getDistance(2, 5), "expected: -1")
+   
+    # Test directLink
+    print("\n***** Testing directLink *****")
+    print("directLink(0, 1) returns:", graph.directLink(0, 1), "expected: True")
+    print("directLink(3, 5) returns:", graph.directLink(3, 5), "expected: False")
+    print("directLink(2, 2) returns:", graph.directLink(2, 2), "expected: True")
+   
+    # Test getNodeName
+    print("\n***** Testing getNodeName *****")
+    print("getNodeName(0) returns:", graph.getNodeName(0), "expected: 'a'")
+    print("getNodeName(3) returns:", graph.getNodeName(3), "expected: 'd'")
+   
+    # Test getSize
+    print("\n***** Testing getSize *****")
+    print("getSize() returns:", graph.getSize(), "expected: 6")
+
+# Test with example file
+test_weighted_graph("graphex.txt")
