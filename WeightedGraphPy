@@ -50,7 +50,7 @@ class WeightedGraph:
         return self.adjMatrix[i][k]
     
     # Direct link method. Returns True if an edge exists between i and k
-    #  or if i and k are the same, and False otherwise.
+    # or if i and k are the same, and False otherwise.
     def directLink(self, i, k):
         
         # to handle out of index error
