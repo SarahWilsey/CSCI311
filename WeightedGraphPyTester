@@ -1,33 +1,48 @@
+# weightedGraohTester.py
+# Sarah Wilsey and Tess Adams 
+# CSIC 311
+# This is a tester for the weighted graph file
+
 from WeightedGraph import WeightedGraph
 
-def test_weighted_graph(filename):
+def testWeightedGraph(filename):
    
-    print("***** Testing WeightedGraph with file:", filename, "*****")
-   
-    # Create WeightedGraph instance
+    # Instance variable
     graph = WeightedGraph(filename)
+    
+    print("-"*50)
    
     graph.printMatrix()
     # Test getDistance
-    print("***** Testing getDistance *****")
+    print("This is a test for getDistance")
+    print()
     print("getDistance(0, 1) returns:", graph.getDistance(0, 1), "expected: 4")
-    print("getDistance(1, 4) returns:", graph.getDistance(1, 4), "expected: 1")
-    print("getDistance(2, 5) returns:", graph.getDistance(2, 5), "expected: -1")
+    print("getDistance(1, 4) returns:", graph.getDistance(1, 4), "expected: -1")
+    print("getDistance(2, 5) returns:", graph.getDistance(2, 5), "expected: 1")
    
+    print("-"*50)
+    
     # Test directLink
-    print("\n***** Testing directLink *****")
+    print("This is a test for directLink")
+    print()
     print("directLink(0, 1) returns:", graph.directLink(0, 1), "expected: True")
-    print("directLink(3, 5) returns:", graph.directLink(3, 5), "expected: False")
+    print("directLink(1, 2) returns:", graph.directLink(1, 2), "expected: False")
     print("directLink(2, 2) returns:", graph.directLink(2, 2), "expected: True")
    
+    print("-"*50)
+    
     # Test getNodeName
-    print("\n***** Testing getNodeName *****")
+    print("This is a test for getNodeName")
+    print()
     print("getNodeName(0) returns:", graph.getNodeName(0), "expected: 'a'")
     print("getNodeName(3) returns:", graph.getNodeName(3), "expected: 'd'")
    
+    print("-"*50)
+    
     # Test getSize
-    print("\n***** Testing getSize *****")
+    print("This is a test for getSize")
+    print()
     print("getSize() returns:", graph.getSize(), "expected: 6")
 
-# Test with example file
-test_weighted_graph("graphex.txt")
+# Calls the function
+testWeightedGraph("graphex.txt")
