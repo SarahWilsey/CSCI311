@@ -1,0 +1,20 @@
+PRIMS PSEUDOCODE
+
+# input: W weighted adjacency matrix indexed from 1 to n
+# output: subset of edges that form MST
+# start at node 1
+# setup
+initialize nearest[i] = 1, for all nodes
+initialize distance[i] = W[1][i], for all nodes i > 1 and distance[1] = -1
+initialize edgeSet # nodeSet is all nodes with distance[i] = -1
+# algorithm
+repeat n-1 times: #already have first node
+1. find node v closest to nodeSet using distance, i.e.
+find the minimum distance that is >= 0
+2. add edge from v to nearest[v] to edgeSet
+3. update distance[v] to indicate v is in nodeSet
+4. update distances from other nodes to v, if shorter, i.e.
+for each node
+if distance from node to v < distance[node]
+update distance[node], update nearest[node]
+return edgeSet
