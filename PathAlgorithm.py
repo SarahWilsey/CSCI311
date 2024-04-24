@@ -59,27 +59,13 @@ def prim(graph):
 def totalWeight(mst, graph):
     totalWeight = 0
     for edge in mst:
-        node1, node2 = edge
-        totalWeight += graph.getDistance(node1, node2)
-    return totalWeight
-
-# Get edge names of MST
-def edgeNames(mst, graph):
-    edgeNames = []
-    for edge in mst:
-        node1, node2 = edge
-        edgeNames.append([graph.getNodeName(node1), graph.getNodeName(node2)])
-    return edgeNames
-
-def totalWeight(mst, graph):
-    totalWeight = 0
-    for edge in mst:
         (node1, node2) = edge
         #node1 = edge[0]
         #node2 = edge[1]
-        totalWeight += graph.getDistance(node1, node2)
+        totalWeight = totalWeight + graph.getDistance(node1, node2)
     return totalWeight
-
+    
+# Get edge names of MST
 def edgeNames(mst, graph):
     edgeNames = []
     for edge in mst:
