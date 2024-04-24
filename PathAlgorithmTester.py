@@ -1,5 +1,5 @@
 from WeightedGraph import WeightedGraph
-from PathAlgorithm import prim, totalWeight, edgeNames
+from PathAlgorithm import *
 
 def test_prim(graph):
     print("***** Testing prim *****")
