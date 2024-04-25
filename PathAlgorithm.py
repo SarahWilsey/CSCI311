@@ -1,4 +1,5 @@
 from WeightedGraph import WeightedGraph
+import sys
 
 def prim(graph):
     # Initialize variables
@@ -25,7 +26,7 @@ def prim(graph):
    
     # While there are unvisited nodes
     while len(visitedNodes) < nodeCount:
-        infinity = 1000000000000000
+        infinity = sys.maxsize()
         minWeightEdge = None # Initialize edge with minimum weight
         minWeight = infinity # Initialize minimum weight
        
